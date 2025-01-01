@@ -17,6 +17,13 @@ This is a backend application for a voting system where users can vote for candi
 - MongoDB
 - JSON Web Tokens (JWT) for authentication
 
+  
+## Deployment
+
+The application is deployed and can be accessed at the following link:
+
+[Deployed Application](https://votingapp-zk58.onrender.com)
+
 ## Installation
 
 1. Clone the repository:
