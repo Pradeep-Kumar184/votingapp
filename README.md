@@ -45,24 +45,24 @@ The application is deployed and can be accessed at the following link:
 ## Candidates
 
 ### Get Candidates
-- `GET /api/v1/auth/candidate/getAll`: Get the list of candidates
+- `GET /api/v1/candidate/getAll`: Get the list of candidates
 
 ### Add Candidate
-- `POST /api/v1/auth/candidate/createCandidate`: Add a new candidate (Admin only)
+- `POST /api/v1/candidate/createCandidate`: Add a new candidate (Admin only)
 
 ### Update Candidate
-- `PUT /api/v1/auth/candidate/updateCandidate/:id`: Update a candidate by ID (Admin only)
+- `PUT /api/v1/candidate/updateCandidate/:id`: Update a candidate by ID (Admin only)
 
 ### Delete Candidate
-- `DELETE /api/v1/auth/candidate/deleteCandidate/:id`: Delete a candidate by ID (Admin only)
+- `DELETE /api/v1/candidate/deleteCandidate/:id`: Delete a candidate by ID (Admin only)
 
 ## Voting
 
 ### Get Vote Count
-- `GET /api/v1/auth/candidate/voteCount`: Get the count of votes for each candidate
+- `GET /api/v1/candidate/voteCount`: Get the count of votes for each candidate
 
 ### Vote for Candidate
-- `POST /api/v1/auth/candidate/vote/:candidateId`: Vote for a candidate (User only)
+- `POST /api/v1/candidate/vote/:candidateId`: Vote for a candidate (User only)
 
 ## User Profile
 
