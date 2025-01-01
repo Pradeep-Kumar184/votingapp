@@ -17,8 +17,8 @@ const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
 // rest api
-app.get("/", requireSignIn, isAdmin, (req, res) => {
-  res.send("server is connected");
+app.get("/", (req, res) => {
+  res.send("server is connected Welcome to voting App");
 });
 // routes
 app.use("/api/v1/auth", authRoutes);
