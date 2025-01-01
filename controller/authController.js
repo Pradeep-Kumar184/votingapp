@@ -189,3 +189,59 @@ export const getProfileController = async (req, res) => {
     });
   }
 };
+
+// update profile
+export const updateProfileController = async (req, res) => {
+  try {
+    const {
+      name,
+      age,
+      email,
+      address,
+      mobile,
+      aadharCardNumber,
+      password,
+      isVoted,
+      favourite_game,
+    } = req.body;
+    const id = req.params.id;
+
+    // Ensure the user exists
+    const existingUser = await userModel.findById(id);
+    if (!existingUser) {
+      return res.status(404).send({
+        success: false,
+        message: "User not found",
+      });
+    }
+    // password
+    const hashedPassword = await hashPassword(password);
+    const userProfile = await userModel.findByIdAndUpdate(
+      id,
+      {
+        name,
+        age,
+        email,
+        address,
+        mobile,
+        aadharCardNumber,
+        password: hashedPassword,
+        isVoted,
+        favourite_game,
+      },
+      { new: true }
+    );
+
+    return res.status(200).send({
+      success: true,
+      message: "userProfile updated successfully",
+      userProfile,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      success: true,
+      message: "Error in update profile",
+      error,
+    });
+  }
+};
