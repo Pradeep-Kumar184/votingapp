@@ -170,3 +170,22 @@ export const forgotPasswordController = async (req, res) => {
     });
   }
 };
+
+// get profile
+export const getProfileController = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const profile = await userModel.findById(id);
+    return res.status(200).send({
+      success: true,
+      message: "profile get successfully",
+      profile,
+    });
+  } catch (error) {
+    res.status(500).send({
+      success: true,
+      message: "Error in get profile",
+      error,
+    });
+  }
+};
